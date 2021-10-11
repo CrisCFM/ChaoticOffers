@@ -83,3 +83,13 @@ CREATE TABLE actividades_admin (
     REFERENCES parcial2.administradores (id_admin)
 );
 
+<<<<<<< Updated upstream
+=======
+-- ----------------------------------------------------
+-- CAMBIOS POSTERIORES
+-- ----------------------------------------------------
+ALTER TABLE `usuarios` 
+ADD `correo` VARCHAR( 100 ) NOT NULL AFTER `nombre` ,
+ADD `telefono` INT( 10 ) NULL AFTER `correo`;
+ALTER TABLE `usuarios` CHANGE `id_usuarios` `id_usuarios` INT( 10 ) NOT NULL AUTO_INCREMENT;
+>>>>>>> Stashed changes
