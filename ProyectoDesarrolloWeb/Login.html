@@ -7,9 +7,10 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="page_type" content="np-template-header-footer-from-plugin">
-  <title>Contact</title>
+  <title>Login</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="Contact.css" media="screen">
+  <link rel="stylesheet" href="Login.css" media="screen">
+  <link rel="stylesheet" href="Login.css?v=<?php echo time(); ?>" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 3.23.2, nicepage.com">
@@ -30,7 +31,7 @@
 <body class="u-body">
   <header class="u-clearfix u-header u-header" id="sec-b10a">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <a href="https://nicepage.com" class="u-image u-logo u-image-1">
+      <a href="index.html" class="u-image u-logo u-image-1">
         <img src="images/logo proyecto.png" class="u-logo-image u-logo-image-1">
       </a>
       <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -55,11 +56,11 @@
           <ul class="u-nav u-unstyled u-nav-1">
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                href="Casa.html" style="padding: 10px 20px;">Navegar&nbsp;</a>
+                href="index.html" style="padding: 10px 20px;">Navegar&nbsp;</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                href="Registro.html" style="padding: 10px 20px;">Registro</a>
+                href="Register.html" style="padding: 10px 20px;">Registro</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
@@ -74,9 +75,9 @@
               <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Casa.html">Casa</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Registro.html">Registro</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">Registro</a>
                 </li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Login.html">Login</a>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Login</a>
                 </li>
               </ul>
             </div>x
@@ -90,25 +91,25 @@
 
   <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-c8d7"></footer>
   <section class="u-backlink u-clearfix u-grey-80">
-    <form id="form1" name="form1" method="post" action="">
+    <form id="form1" name="form1" method="post" action="login.php">
       <label for="textfield2">Usuario:</label>  
       <center>
-        <input type="text" required name="Nombres" placeholder="Nombres" name="txtusuario" />
+        <input type="text" name="txtusuario" id="textField" style="color: black;"/>
       </center>
       &nbsp;
       <label for="txtpassword">Contraseña:</label>
       <center>
-        <input type="password " required name="Teléfono" placeholder="Teléfono" name="txtpassword" />
+        <input type="password" name="txtpassword" id="textField" style="color: black;"/>
       </center>
 
       &nbsp;
       <center><label>
-          <input type="submit" name="Submit" value="Registrarse" />
+          <input type="submit" name="login" id="Submit" value="Login" style="color: #525252;"/>
         </label></center>
 
       &nbsp;
       <center><label>
-          <input type="reset" name="Submit2" value="Limpiar" />
+          <input type="reset" name="Submit2" id="Submit2" value="Limpiar" style="color: #525252;"/>
         </label></center>
 
   </section>
