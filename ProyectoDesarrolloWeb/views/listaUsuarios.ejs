@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="css/nicepage.css">
+    <script class="u-script" type="text/javascript" src="javascript/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="javascript/nicepage.js" defer=""></script>
+</head>
+<body>
+
+    <a href="/create">CREAR USUARIO</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>CORREO</th>
+                <th>TELEFONO</th>
+                <th>USERNAME</th>
+                <th>PASSWORD</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach((user) => {%>
+
+            
+            <tr>
+                <td><%= user.id_usuarios %></td>
+                <td><%= user.nombre %></td>
+                <td><%= user.correo %></td>
+                <td><%= user.telefono %></td>
+                <td><%= user.username %></td>
+                <td><%= user.clave %></td>
+                <!-- ACCIONES-->
+                <td>
+                    <a href="/edit/<%= user.id_usuarios %>" >EDITAR</a>
+                    <a href="/delete/<%= user.id_usuarios %>" >BORRAR</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+
+    </table>
+</body>
+</html>

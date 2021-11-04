@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear usuario</title>
+    <link rel="stylesheet" href="css/nicepage.css">
+    <script class="u-script" type="text/javascript" src="javascript/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="javascript/nicepage.js" defer=""></script>
+</head>
+<body>
+
+    <a href="/listaUsuarios">LISTA DE USUARIOS</a>
+
+    <form action="/save" method="post">
+
+        <div>
+            <label for="user">NOMBRE</label>
+            <input type="text" name="Fnombre">
+        </div>
+
+        <div>
+            <label for="user">CORREO</label>
+            <input type="text" name="Fcorreo">
+        </div>
+
+        <div>
+            <label for="user">TELEFONO</label>
+            <input type="text" name="Ftel">
+        </div>
+
+        <div>
+            <label for="user">NOMBRE DE USUARIO</label>
+            <input type="text" name="Fusername">
+        </div>
+
+        <div>
+            <label for="user">CLAVE</label>
+            <input type="text" name="Fpass">
+        </div>
+
+        <button type="submit">GUARDAR</button>
+
+    </form>
+
+    <a href="/">CANCELAR</a>
+    
+</body>
+</html>
