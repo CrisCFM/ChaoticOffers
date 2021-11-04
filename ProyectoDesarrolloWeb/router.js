@@ -16,4 +16,8 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/pruebaF', (req, res) =>{
+    res.redirect('/');
+});
+
 module.exports = router;
