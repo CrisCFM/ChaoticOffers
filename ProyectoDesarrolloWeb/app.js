@@ -1,31 +1,17 @@
-var mysql = require('mysql');
+const express = require('express');
+const app = express();
+const path = require('path');
 
-//Crear la conexion
-var conexion = mysql.createConnection({
-    host:'localhost',
-    database:'parcial2',
-    user: 'root',
-    password: '123'
+
+app.listen(5000, () => {
+    console.log('SERVER CORRIENDO EN PUERTO 5000');
 });
 
-//Conectarse a la base de datos
-conexion.connect(function(error){
-    if(error){
-        throw error;
-    }else{
-        console.log("CONEXION A LA BASE DE DATOS EXITOSA")
-    }
-});
+//Definir motor de plantillas
+app.set('view engine', 'ejs');
 
-//Hacer consultas
-conexion.query('SELECT * FROM usuarios', function(error, results, fields){
-    if(error){
-        throw error;
-    }else{
-        results.forEach(result => {
-            console.log(result);
-        })
-    }
-});
+//Ubicar la carpeta views
+app.set("views", path.join(__dirname, "views"));
 
-conexion.end();
+//Usar el router creado
+app.use('/', require('./router'));

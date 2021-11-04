@@ -2,7 +2,7 @@
   "name": "ChaoticOffers",
   "version": "1.0.0",
   "description": "Pagina web de una tienda de videojuegos para la materia de desarrollo web",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "nodemon ProyectoDesarrolloWeb/app.js"
   },
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/CrisCFM/ChaoticOffers#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "mysql": "^2.18.1"
   }
 }
