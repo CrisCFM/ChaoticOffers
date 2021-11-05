@@ -1,4 +1,5 @@
 //Definir las rutas de nuestro proyecto
+const { application } = require('express');
 const express = require('express');
 const router = express.Router();
 const crud = require('./controller/crud'); //Llamar al controlador
@@ -8,6 +9,12 @@ const conexion = require('./database/db');
 //RUTA RAIZ
 router.get('/', (req, res) => {
     res.render('index');
+});
+
+//RUTAS DE LA PAGINA WEB
+//RUTA PARA EL LOGEO DE USUARIOS
+router.get('/prueba', (req, res) => {
+    res.render('Casa');
 });
 
 //RUTA PARA LISTAR LOS USUARIOS
@@ -49,11 +56,6 @@ router.get('/delete/:id', (req, res) => {
             res.redirect('/listaUsuarios');
         }
     });
-});
-
-
-router.post('/pruebaF', (req, res) =>{
-    res.redirect('/');
 });
 
 //CONTROLADOR
