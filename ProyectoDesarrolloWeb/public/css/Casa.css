@@ -1,5 +1,6 @@
 .u-section-1 {
-  background-image: url("images/pexelsphoto3231775.jpeg");
+  background-image: url("../images/pexelsphoto3231775.jpeg");
+  /* background-color: black; */
   background-position: 50% 50%;
 }
 

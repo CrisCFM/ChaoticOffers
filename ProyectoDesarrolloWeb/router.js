@@ -5,6 +5,11 @@ const crud = require('./controller/crud'); //Llamar al controlador
 
 const conexion = require('./database/db');
 
+//RUTA RAIZ
+router.get('/', (req, res) => {
+    res.render('index');
+});
+
 //RUTA PARA LISTAR LOS USUARIOS
 router.get('/listaUsuarios', (req, res) => {
     conexion.query('SELECT * FROM usuarios', (error, results) => {
@@ -18,18 +23,18 @@ router.get('/listaUsuarios', (req, res) => {
 });
 
 //RUTA PARA CREAR USUARIOS
-router.get('/create', (req, res) => {
-    res.render('create');
+router.get('/crearUsuario', (req, res) => {
+    res.render('crearUsuario');
 });
 
 //RUTA PARA EDITAR USUARIOS
-router.get('/edit/:id', (req, res) => {
+router.get('/editarUsuario/:id', (req, res) => {
     const id = req.params.id;
     conexion.query('SELECT * FROM usuarios WHERE id_usuarios=?', [id], (error, results) => {
         if(error){
             throw error;
         }else{
-            res.render('edit', {user:results[0]});
+            res.render('editarUsuario', {user:results[0]});
         }
     });
 });
