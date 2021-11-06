@@ -8,9 +8,9 @@
   <meta name="description" content="">
   <meta name="page_type" content="np-template-header-footer-from-plugin">
   <title>Login</title>
-  <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="Login.css" media="screen">
-  <link rel="stylesheet" href="Login.css?v=<?php echo time(); ?>" media="screen">
+  <link rel="stylesheet" href="css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="../public/css/Login.css" media="screen">
+  <link rel="stylesheet" href="css/Login.css?v=<?php echo time(); ?>" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
   <meta name="generator" content="Nicepage 3.23.2, nicepage.com">
@@ -31,7 +31,7 @@
 <body class="u-body">
   <header class="u-clearfix u-header u-header" id="sec-b10a">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <a href="index.html" class="u-image u-logo u-image-1">
+      <a href="/" class="u-image u-logo u-image-1">
         <img src="images/logo proyecto.png" class="u-logo-image u-logo-image-1">
       </a>
       <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
@@ -56,15 +56,15 @@
           <ul class="u-nav u-unstyled u-nav-1">
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                href="index.html" style="padding: 10px 20px;">Navegar&nbsp;</a>
+                href="/" style="padding: 10px 20px;">Navegar&nbsp;</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                href="Register.html" style="padding: 10px 20px;">Registro</a>
+                href="/register" style="padding: 10px 20px;">Registro</a>
             </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                href="Login.html" style="padding: 10px 20px;">Login</a>
+                href="/login" style="padding: 10px 20px;">Login</a>
             </li>
           </ul>
         </div>
@@ -91,7 +91,7 @@
 
   <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-c8d7"></footer>
   <section class="u-backlink u-clearfix u-grey-80">
-    <form id="form1" name="form1" method="post" action="login.php">
+    <form id="form1" name="form1" method="post" action="/auth">
       <label for="textfield2">Usuario:</label>  
       <center>
         <input type="text" name="txtusuario" id="textField" style="color: black;"/>

@@ -90,3 +90,5 @@ ALTER TABLE `usuarios`
 ADD `correo` VARCHAR( 100 ) NOT NULL AFTER `nombre` ,
 ADD `telefono` INT( 10 ) NULL AFTER `correo`;
 ALTER TABLE `usuarios` CHANGE `id_usuarios` `id_usuarios` INT( 10 ) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `actividades_admin` ADD `enlace` VARCHAR( 50 ) NOT NULL DEFAULT '/' AFTER `id_admin`;

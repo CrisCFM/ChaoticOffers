@@ -285,7 +285,13 @@
             <div class="container-fluid">    
 				
 				<!--COMIENZO DEL CODIGO DE LA TABLA DE USUARIOS-->
-				
+
+                <% if (login) { %>                
+                    <h1>¡BIENVENIDO! <strong><%= name %></strong></h1>                        
+                <%} else { %>
+                    <h1><strong>ERROR CAARGANDO EL NOBMRE DE USUARIO</strong></h1>   
+                <% } %>
+                
 				<script type="text/javascript">
 				   function ConfirmDelete()
 				   {
@@ -300,19 +306,6 @@
 
 				   }
 				</script>
-				
-				<?php
-					include_once('conexion.php');
-
-					$con=mysqli_connect($host,$usuario,$clave,$bd) or die('Fallo la conexion');
-					mysqli_set_charset($con,"utf8");
-				?>
-	
-				<?php
-					$consulta="SELECT * FROM $bd.usuarios";
-					$resultado = mysqli_query($con,$consulta) or die(mysql_error());
-
-				?>
 		
         		<div id="apDiv1">
         
@@ -331,21 +324,7 @@
 				</div>
        		
 		<!-- Consulta que permite seleccionar Los Datos de la venta -->
-				<?php
-				  $buscar = isset($_GET['txtbuscar']) ? $_GET['txtbuscar'] : '';
-
-				  if($buscar!=null){
-				  $consulta="SELECT * FROM $bd.usuarios WHERE id_usuarios LIKE"."'%".$buscar."%' OR nombre LIKE"."'%".$buscar."%' ";
-
-
-				  $resultado = mysqli_query($con,$consulta) or die(mysql_error());
-				  }else{
-
-					   }		   
-				?>
-				
-				
-				
+			
 				<div class="container"> 
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
@@ -371,33 +350,26 @@
 
 
 								</tr><a href="../../../PerfLogs"></a>
-								<?php
-								while($fila = mysqli_fetch_array($resultado)){
-								?>
+                                <% results.forEach((user) => {%>
 								<tr id="filasTabla">
-									<td class="text-center"><?php echo $fila['id_usuarios'];?></td>
-									<td ><?php echo $fila['nombre'];?></td>   
-									<td><?php echo $fila['correo'];?></td>  
-									<td><?php echo $fila['telefono'];?></td>
-									<td><?php echo $fila['username'];?></td>
-									<td><?php echo $fila['clave'];?></td>
+									<td class="text-center"><%= user.id_usuarios %></td>
+									<td ><%= user.nombre %></td>   
+									<td><%= user.correo %></td>  
+									<td><%= user.telefono %></td>
+                                    <td><%= user.username %></td>
+                                    <td><%= user.clave %></td>
 									
 									<td class="text-center">
-								   <a href="editarUsuario.php?id_usuarios=<?php echo $fila['id_usuarios'];?>" class="btn btn-warning btn-sm">
+								   <a href="/editarUsuario/<%= user.id_usuarios %>" class="btn btn-warning btn-sm">
 									   	EDITAR
 									   </a>    
-								   <a href="eliminarUsuarios.php?id=<?php echo $fila['id_usuarios'];?>" class="btn btn-warning btn-sm" onclick = "return ConfirmDelete()">
+								   <a href="/delete/<%= user.id_usuarios %>" class="btn btn-warning btn-sm" onclick = "return ConfirmDelete()">
 									   ELIMINAR
 									   </a>                        
 								   </td>  
 									
-							   </tr>
-								<?php 
-								}
-
-								 mysqli_close($con);  
-								?>           
-
+							   </tr>        
+                               <% }) %>
 						  </table>
 
 				</div> 

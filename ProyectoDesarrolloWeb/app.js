@@ -15,6 +15,14 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 app.use(express(json));
 
+//SESION DE USUARIOS
+const session = require('express-session');
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+
 //Usar css en servidor express
 app.use(express.static(path.join(__dirname, "public")));
 

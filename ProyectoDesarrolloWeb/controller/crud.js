@@ -13,7 +13,7 @@ exports.save = (req, res) => {
     conexion.query(sql, post, (err, results) => {
         if(err) throw err;
         console.log('USUARIO CREADO CON EXITO');
-        res.redirect('/listaUsuarios');
+        res.redirect('/');
     });
 };
 
@@ -32,6 +32,6 @@ exports.update = (req, res) => {
     conexion.query(sql, [post, id], (err, results) => {
         if(err) throw err;
         console.log('USUARIO EDITADO CON EXITO');
-        res.redirect('/listaUsuarios');
+        res.redirect('/dashboard');
     });
 };
