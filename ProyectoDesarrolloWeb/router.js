@@ -27,23 +27,34 @@ router.get('/register', (req, res) => {
 
 //RUTA DEL DASHBOARD
 router.get('/dashboard', (req, res) => {
-    conexion.query('SELECT * FROM usuarios', (error, results) => {
-        if(error){
-            throw error;
+    const usuario = req.session.name;
+    //MENU DINAMICO
+    conexion.query('SELECT id_usuarios FROM usuarios WHERE username = ?', [usuario], (error1, results1) => {
+        if(error1){
+            throw error1;
         }else{
-            if (req.session.loggedin) {
-                res.render('Dashboard', {results:results, login: true, name: req.session.name});
-            } else {
-                res.render('Dashboard', {results:results, login: false, name: "Debe iniciar sesión"});			
-            }
-            res.end();
-            // res.render('Dashboard', {results:results});
+            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?'
+            const id_usuario = results1[0].id_usuarios;
+            conexion.query('SELECT * FROM actividades WHERE id_actividad IN (' + sql + ')', [id_usuario], (error2, resultados) => {
+                if(error2){
+                    throw error2;
+                }else{
+                    console.log(resultados);
+                    if (req.session.loggedin) {
+                        // res.render('Dashboard', {login: true, name: req.session.name});
+                        res.render('Dashboard', {login: true, name: req.session.name, resultados:resultados});           
+                    } else {
+                        res.render('Dashboard', {login: false, name: "Debe iniciar sesión"});			
+                    }
+                    res.end();  
+                }
+            });
         }
     });
 });
 
 //RUTA PARA LISTAR LOS USUARIOS
-router.get('/listaUsuarios', (req, res) => {
+router.get('/dashboard/listaUsuarios', (req, res) => {
     conexion.query('SELECT * FROM usuarios', (error, results) => {
         if(error){
             throw error;
@@ -95,8 +106,8 @@ router.post('/auth', (req, res) => {
             }else{
                 req.session.loggedin = true;                
 				req.session.name = results[0].username;
-                const sesion = req.session;
-                console.log(sesion);
+                // const sesion = req.session;
+                // console.log(sesion);
                 res.redirect('/dashboard');
             }
         });

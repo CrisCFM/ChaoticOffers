@@ -125,3 +125,16 @@ INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (104,"Ver p
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (105,"Ver videojuegos","/");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (106,"Gestionar actividades","/");
 
+-- Gestionando las actividades del ADMIN
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1001, 101, 10);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1002, 102, 10);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1003, 103, 10);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1004, 106, 10);
+
+-- Añadiendo la actividad CERRAR SESION a todos los usuarios
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2001, 101, 2);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2002, 101, 3);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2003, 101, 5);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2004, 101, 6);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2005, 101, 7);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2006, 101, 8);
