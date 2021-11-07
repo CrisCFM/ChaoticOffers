@@ -242,6 +242,7 @@
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
+                
             </div>
             <!-- End Sidebar scroll-->
         </aside>
@@ -278,35 +279,43 @@
             <!-- ============================================================== -->
             <div class="container-fluid">    
 				
-				<!--COMIENZO DEL CODIGO DE LA EDICION DE USUARIOS-->
+				<!--COMIENZO DEL CODIGO DE LA GESTION DE ACTIVIDADES-->
                 <% if(user) { %>
-                <form action="/update" method="post">
-                    <input id="id" name="id" value="<%= user.id_usuarios %>" hidden>
-                    <div>
-                        <label for="user">NOMBRE</label>
-                        <input type="text" name="Enombre" value="<%= user.nombre %>">
-                    </div>
-                    <div>
-                        <label for="user">CORREO</label>
-                        <input type="text" name="Ecorreo" value="<%= user.correo %>">
-                    </div>
-                    <div>
-                        <label for="user">TELEFONO</label>
-                        <input type="text" name="Etel" value="<%= user.telefono %>">
-                    </div>
-                    <div>
-                        <label for="user">NOMBRE DE USUARIO</label>
-                        <input type="text" name="Eusername" value="<%= user.username %>">
-                    </div>
-                    <div>
-                        <label for="user">CLAVE</label>
-                        <input type="text" name="Epass" value="<%= user.clave %>">
-                    </div>
-                    <button type="submit">GUARDAR</button>
-                </form>
+                <div>
+                    <h1>USUARIO: </h1><h4> <%= user.nombre %> </h4>
+                    <h1>CUENTA: </h1>
+                    <h2>Username</h2><h4> <%= user.username %> </h4>
+                    <h2>Contraseña</h2><h4> <%= user.clave %> </h4>
+                </div>
                 <% } %>
+
+                <form action="/addActivity" method="post">
+
+                    <input id="id" name="id" value="<%= user.id_usuarios %>" hidden>
+
+                    <div>
+                        <label for="act">ID DE LA ACTIVIDAD</label>
+                        <input type="text" name="idAct">
+                    </div>
+                    <div>
+                        <label for="act">NOMBRE DE LA ACTIVIDAD</label>
+                        <input type="text" name="nombreAct">
+                    </div>
+                    <div>
+                        <label for="act">RUTA DE LA ACTIVIDAD</label>
+                        <input type="text" name="enlaceAct" value="/">
+                    </div>
+                    <div>
+                        <label for="act">ID DE LA GESTION</label>
+                        <input type="text" name="idGestAct">
+                    </div>
+
+                    <button type="submit">GUARDAR</button>
+
+                </form>
                 <a href="/dashboard">CANCELAR</a>
-				<!--FIN DEL CODIGO DE LA EDICION DE USUARIOS-->
+
+				<!--FIN DEL CODIGO DE LA GESTION DE ACTIVIDADES-->
 				
                 </div>
                 <!-- ============================================================== -->

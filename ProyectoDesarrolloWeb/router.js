@@ -127,6 +127,18 @@ router.get('/dashboard/listaUsuarios', (req, res) => {
     });
 });
 
+//RUTA PARA GESTIONAR ACTIVIDADES
+router.get('/dashboard/gestionactividades/:id', (req, res) => {
+    const id = req.params.id;
+    conexion.query('SELECT * FROM usuarios WHERE id_usuarios=?', [id], (error, results) => {
+        if(error){
+            throw error;
+        }else{
+            res.render('gestionActividades', {user:results[0]});
+        }
+    });
+});
+
 //RUTA PARA AGREGAR USUARIO
 router.get('/agregaUsuario', (req, res) => {
     res.render('agregarUsuario');
@@ -186,5 +198,6 @@ router.get('/logout', function (req, res) {
 //CONTROLADOR
 router.post('/save', crud.save);
 router.post('/update', crud.update);
+router.post('/addActivity', crud.addActivity);
 
 module.exports = router;

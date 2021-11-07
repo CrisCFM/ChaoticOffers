@@ -13,7 +13,7 @@ exports.save = (req, res) => {
     conexion.query(sql, post, (err, results) => {
         if(err) throw err;
         console.log('USUARIO CREADO CON EXITO');
-        res.redirect('/');
+        res.redirect('/dashboard');
     });
 };
 
@@ -33,5 +33,39 @@ exports.update = (req, res) => {
         if(err) throw err;
         console.log('USUARIO EDITADO CON EXITO');
         res.redirect('/dashboard');
+    });
+};
+
+//Crear y gestionar una actividad en un usuario
+exports.addActivity = (req, res) =>{
+    let actividad = {
+        id_actividad : req.body.idAct,
+        nombre : req.body.nombreAct,
+        enlace : req.body.enlaceAct
+    };
+
+    let gestion = {
+        id_gest : req.body.idGestAct,
+        id_act : req.body.idAct,
+        id_usuario : req.body.id
+    };
+
+    let sql = 'INSERT INTO actividades SET ?';
+    let sql2 = 'INSERT INTO gest_actividades SET ?';
+    
+    conexion.query(sql, actividad, (err, results) => {
+        if(err){
+            throw err;
+        }else{
+            console.log('ACTIVIDAD CREADA CON EXITO');
+            conexion.query(sql2, gestion, (error, resu) => {
+                if(error){
+                    throw error;
+                }else{
+                    console.log('GESTION CREADA CON EXITO');
+                    res.redirect('/dashboard');
+                }
+            })
+        }
     });
 };

@@ -356,10 +356,13 @@
 									<td class="text-center">
 								   <a href="/editarUsuario/<%= user.id_usuarios %>" class="btn btn-warning btn-sm">
 									   	EDITAR
-									   </a>    
+                                    </a>    
 								   <a href="/delete/<%= user.id_usuarios %>" class="btn btn-warning btn-sm" onclick = "return ConfirmDelete()">
 									   ELIMINAR
-									   </a>                        
+                                    </a>
+                                    <a href="/dashboard/gestionactividades/<%= user.id_usuarios %>" class="btn btn-warning btn-sm">
+                                    ACTIVIDADES
+                                    </a>                          
 								   </td>  
 									
 							   </tr>        

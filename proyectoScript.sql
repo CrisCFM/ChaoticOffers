@@ -121,9 +121,6 @@ CREATE TABLE gest_actividades(
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (101,"Cerrar sesion","/logout");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (102,"Lista de usuarios","/");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (103,"Lista de videojuegos","/");
-INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (104,"Ver perfil","/");
-INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (105,"Ver videojuegos","/");
-INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (106,"Gestionar actividades","/");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (107,"Menu principal","/dashboard");
 
 -- Gestionando las actividades del ADMIN
