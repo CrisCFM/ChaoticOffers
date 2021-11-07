@@ -54,6 +54,11 @@ router.get('/listaUsuarios', (req, res) => {
     });
 });
 
+//RUTA PARA AGREGAR USUARIO
+router.get('/agregaUsuario', (req, res) => {
+    res.render('agregarUsuario');
+});
+
 //RUTA PARA EDITAR USUARIOS
 router.get('/editarUsuario/:id', (req, res) => {
     const id = req.params.id;

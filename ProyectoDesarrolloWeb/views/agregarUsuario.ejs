@@ -284,97 +284,50 @@
             <!-- ============================================================== -->
             <div class="container-fluid">    
 				
-				<!--COMIENZO DEL CODIGO DE LA TABLA DE USUARIOS-->
+				<!--COMIENZO DEL CODIGO AGREGAR USUARIOS-->
+        <div class="u-clearfix u-sheet u-sheet-1">
 
-                <% if (login) { %>                
-                    <h1>¡BIENVENIDO! <strong><%= name %></strong></h1>                        
-                <%} else { %>
-                    <h1><strong>ERROR CAARGANDO EL NOBMRE DE USUARIO</strong></h1>   
-                <% } %>
-                
-				<script type="text/javascript">
-				   function ConfirmDelete()
-				   {
-					   var respuesta = confirm("¿Esta seguro que desea Eliminar el Registro?");
-
-						 if(respuesta == true){
-							 return true;
-						 }
-						 else{
-							 return false;
-						 }
-
-				   }
-				</script>
-		
-        		<div id="apDiv1">
-        
-				  <table align="left" width="429" border="0">
-					<tr>
-					  <td width="664"><form class="form">
-						<input name="txtbuscar" type="text" class="form-control" title="Ingresar el Nombre o ID." size="40" placeholder="Ingresar el Nombre o ID">
-						<input type="submit" value="Buscar">     
-					</form>
-
-					  </td>
-
-					</tr>
-				  </table>
-
-				</div>
-       		
-		<!-- Consulta que permite seleccionar Los Datos de la venta -->
-			
-				<div class="container"> 
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-          
-          		<div id="btnAnadir">
-					<a href="/agregaUsuario" target="principal" class="btn btn-warning btn-sm">
-						AGREGAR
-					</a>
-				</div>
-          
-          
-				<hr>
-				<table id="tabla" width="68%" border="5" cellpadding="0" cellspacing="1" bordercolor="#000000" style="border-collapse:collapse;border-color:#ddd;" align="center">
-								<tr>
-
-									<th width="3%" class="text-center">ID</th>
-									<th width="21%" class="text-center">NOMBRE</th>
-									<th width="21%" class="text-center">CORREO</th>
-									<th width="17%" class="text-center">TELEFONO</th>
-									<th width="17%" class="text-center">USUARIO</th>
-									<th width="17%" class="text-center">CLAVE</th>
-									<th width="17%" class="text-center">ACCIONES</th>
-
-
-								</tr><a href="../../../PerfLogs"></a>
-                                <% results.forEach((user) => {%>
-								<tr id="filasTabla">
-									<td class="text-center"><%= user.id_usuarios %></td>
-									<td ><%= user.nombre %></td>   
-									<td><%= user.correo %></td>  
-									<td><%= user.telefono %></td>
-                                    <td><%= user.username %></td>
-                                    <td><%= user.clave %></td>
-									
-									<td class="text-center">
-								   <a href="/editarUsuario/<%= user.id_usuarios %>" class="btn btn-warning btn-sm">
-									   	EDITAR
-									   </a>    
-								   <a href="/delete/<%= user.id_usuarios %>" class="btn btn-warning btn-sm" onclick = "return ConfirmDelete()">
-									   ELIMINAR
-									   </a>                        
-								   </td>  
-									
-							   </tr>        
-                               <% }) %>
-						  </table>
-
-				</div> 
-				
-				<!--FIN DEL CODIGO DE LA TABLA DE USUARIOS-->
+          <form id="form1" name="form1" method="post" action="/save">
+    
+    
+            <label for="user">Nombre Completo:</label>
+            <center>
+              <input type="text" name="Fnombre" id="textfield">
+            </center>
+            &nbsp;
+            <label for="user">Usuario:&nbsp;</label>
+            <center><label><input type="text" name="Fusername"
+                  id="textfield"></label></center>
+            &nbsp;
+            <label for="user">Correo:&nbsp;</label>
+            <center><label>
+                <input type="text" name="Fcorreo" id="textfield"></label></center>
+                &nbsp;
+                <label for="user">Telefono:</label>
+            <center>
+              <input type="tel" name="Ftel" id="textfield">
+            </center>
+            &nbsp;
+            <label for="user">Contraseña:</label>
+            <center>
+              <input type="password" name="Fpass" id="textfield">
+            </center>
+            &nbsp;
+            <center><label>
+                <input type="submit" name="Submit" id="Submit" value="Registrarse" />
+              </label></center>
+              &nbsp;
+            <center><label>
+                <input type="reset" name="Submit2" id="Submit2" value="Limpiar" />
+              </label></center>
+    
+            </p>
+            &nbsp;
+          </form>
+    
+          <p class="u-small-text u-text u-text-variant u-text-1">&nbsp;</p>
+        </div>
+				<!--FIN DEL CODIGO DE AGREGAR USUARIOS-->
 				
                 </div>
                 <!-- ============================================================== -->
