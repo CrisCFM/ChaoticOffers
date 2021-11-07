@@ -33,7 +33,7 @@ router.get('/dashboard', (req, res) => {
         if(error1){
             throw error1;
         }else{
-            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?'
+            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?';
             const id_usuario = results1[0].id_usuarios;
             conexion.query('SELECT * FROM actividades WHERE id_actividad IN (' + sql + ')', [id_usuario], (error2, resultados) => {
                 if(error2){
@@ -61,7 +61,7 @@ router.get('/dashboard/listavideojuegos', (req, res) => {
         if(error1){
             throw error1;
         }else{
-            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?'
+            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?';
             const id_usuario = results1[0].id_usuarios;
             conexion.query('SELECT * FROM actividades WHERE id_actividad IN (' + sql + ')', [id_usuario], (error2, resultados) => {
                 if(error2){
@@ -98,7 +98,7 @@ router.get('/dashboard/listaUsuarios', (req, res) => {
         if(error1){
             throw error1;
         }else{
-            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?'
+            const sql = 'SELECT id_act FROM gest_actividades WHERE id_usuario = ?';
             const id_usuario = results1[0].id_usuarios;
             conexion.query('SELECT * FROM actividades WHERE id_actividad IN (' + sql + ')', [id_usuario], (error2, resultados) => {
                 if(error2){
