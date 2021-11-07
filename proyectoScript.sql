@@ -92,3 +92,36 @@ ADD `telefono` INT( 10 ) NULL AFTER `correo`;
 ALTER TABLE `usuarios` CHANGE `id_usuarios` `id_usuarios` INT( 10 ) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `actividades_admin` ADD `enlace` VARCHAR( 50 ) NOT NULL DEFAULT '/' AFTER `id_admin`;
+
+DROP TABLE actividades_admin;
+DROP TABLE actividades_usuarios;
+DROP TABLE administradores;
+
+CREATE TABLE actividades (
+  id_actividad INT(10) NOT NULL,
+  nombre VARCHAR(45) NOT NULL,
+  enlace VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id_actividad)
+);
+
+CREATE TABLE gest_actividades(
+  id_gest INT(10) NOT NULL,
+  id_act INT(10) NOT NULL,
+  id_usuario INT(10) NOT NULL,
+  PRIMARY KEY (id_gest),
+  CONSTRAINT fk_gest_actividades_usuarios
+    FOREIGN KEY (id_usuario)
+    REFERENCES usuarios (id_usuarios),
+  CONSTRAINT fk_gest_actividades_actividades
+    FOREIGN KEY (id_act)
+    REFERENCES actividades (id_actividad)
+);
+
+-- Insertando actividades
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (101,"Cerrar sesion","/logout");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (102,"Lista de usuarios","/");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (103,"Lista de videojuegos","/");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (104,"Ver perfil","/");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (105,"Ver videojuegos","/");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (106,"Gestionar actividades","/");
+
