@@ -124,12 +124,14 @@ INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (103,"Lista
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (104,"Ver perfil","/");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (105,"Ver videojuegos","/");
 INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (106,"Gestionar actividades","/");
+INSERT INTO `actividades`(`id_actividad`, `nombre`, `enlace`) VALUES (107,"Menu principal","/dashboard");
 
 -- Gestionando las actividades del ADMIN
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1001, 101, 10);
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1002, 102, 10);
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1003, 103, 10);
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1004, 106, 10);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (1005, 107, 10);
 
 -- Añadiendo la actividad CERRAR SESION a todos los usuarios
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2001, 101, 2);
@@ -138,3 +140,9 @@ INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2003, 
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2004, 101, 6);
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2005, 101, 7);
 INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2006, 101, 8);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2007, 107, 2);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2008, 107, 3);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2009, 107, 5);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2010, 107, 6);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2011, 107, 7);
+INSERT INTO `gest_actividades`(`id_gest`, `id_act`, `id_usuario`) VALUES (2012, 107, 8);

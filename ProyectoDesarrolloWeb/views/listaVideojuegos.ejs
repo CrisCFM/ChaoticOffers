@@ -283,23 +283,89 @@
             <!-- ============================================================== -->
             <div class="container-fluid">    
 				
-				<!--COMIENZO DEL CODIGO DEL DASHBOARD-->
-
-                <% if (login) { %>                
-                    <h1>¡BIENVENIDO! <strong><%= name %></strong></h1>                        
-                <%} else { %>
-                    <h1><strong>ERROR CAARGANDO EL NOBMRE DE USUARIO</strong></h1>   
-                <% } %>
-
-                <ul>
-                    <% resultados.forEach((actividad) => {%>
-                        <li><a href="<%= actividad.enlace %>"><%= actividad.nombre %></a></li>
-                    <% }) %>
-                </ul>
+				<!--COMIENZO DEL CODIGO DE LA TABLA DE USUARIOS-->
                 
+				<script type="text/javascript">
+				   function ConfirmDelete()
+				   {
+					   var respuesta = confirm("¿Esta seguro que desea Eliminar el Registro?");
+
+						 if(respuesta == true){
+							 return true;
+						 }
+						 else{
+							 return false;
+						 }
+
+				   }
+				</script>
+		
+        		<div id="apDiv1">
+        
+				  <table align="left" width="429" border="0">
+					<tr>
+					  <td width="664"><form class="form">
+						<input name="txtbuscar" type="text" class="form-control" title="Ingresar el Nombre o ID." size="40" placeholder="Ingresar el Nombre o ID">
+						<input type="submit" value="Buscar">     
+					</form>
+
+					  </td>
+
+					</tr>
+				  </table>
+
+				</div>
+       		
+		<!-- Consulta que permite seleccionar Los Datos de la venta -->
+			
+				<div class="container"> 
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+          
+          		<div id="btnAnadir">
+					<a href="/agregaUsuario" target="principal" class="btn btn-warning btn-sm">
+						AGREGAR
+					</a>
+				</div>
+          
+          
+				<hr>
+				<table id="tabla" width="68%" border="5" cellpadding="0" cellspacing="1" bordercolor="#000000" style="border-collapse:collapse;border-color:#ddd;" align="center">
+								<tr>
+
+									<th width="3%" class="text-center">ID</th>
+									<th width="21%" class="text-center">TITULO</th>
+									<th width="21%" class="text-center">DESCRIPCION</th>
+									<th width="17%" class="text-center">CALIFICACION</th>
+									<th width="17%" class="text-center">PRECIO</th>
+									<th width="17%" class="text-center">ACCIONES</th>
+
+
+								</tr><a href="../../../PerfLogs"></a>
+                                <% results.forEach((game) => {%>
+								<tr id="filasTabla">
+									<td class="text-center"><%= game.id_videojuego %></td>
+									<td ><%= game.titulo %></td>   
+									<td><%= game.descripcion %></td>  
+									<td><%= game.calificacion %></td>
+                                    <td><%= game.precio %></td>
+									
+									<td class="text-center">
+								   <a href="/editarUsuario/<%= game.id_videojuego %>" class="btn btn-warning btn-sm">
+									   	EDITAR
+									   </a>    
+								   <a href="/delete/<%= game.id_videojuego %>" class="btn btn-warning btn-sm" onclick = "return ConfirmDelete()">
+									   ELIMINAR
+									   </a>                        
+								   </td>  
+									
+							   </tr>        
+                               <% }) %>
+						  </table>
+
+				</div> 
 				
-				
-				<!--FIN DEL CODIGO DEL DASHBOARD-->
+				<!--FIN DEL CODIGO DE LA TABLA DE USUARIOS-->
 				
                 </div>
                 <!-- ============================================================== -->

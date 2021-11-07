@@ -242,12 +242,12 @@
         <aside class="left-sidebar" data-sidebarbg="skin5">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
-				<ul>
-				
-					<li><a href="index.php">LISTA DE USUARIOS</a></li>
-					<li><a href="listavideojuegos.php">LISTA DE VIDEOJUEGOS</a></li>
-				
-				</ul>
+				<!-- <h1>AQUI VA EL MENU DINAMICO</h1> -->
+                <ul>
+                    <% resultados.forEach((actividad) => {%>
+                        <li><a href="<%= actividad.enlace %>"><%= actividad.nombre %></a></li>
+                    <% }) %>
+                </ul>
             </div>
             <!-- End Sidebar scroll-->
         </aside>
